@@ -1,0 +1,16 @@
+C:\Users\vandr\Desktop\labwork_4\labwork_4_2\bin\Debug\net5.0\labwork_4_2.exe
+C:\Users\vandr\Desktop\labwork_4\labwork_4_2\bin\Debug\net5.0\labwork_4_2.deps.json
+C:\Users\vandr\Desktop\labwork_4\labwork_4_2\bin\Debug\net5.0\labwork_4_2.runtimeconfig.json
+C:\Users\vandr\Desktop\labwork_4\labwork_4_2\bin\Debug\net5.0\labwork_4_2.runtimeconfig.dev.json
+C:\Users\vandr\Desktop\labwork_4\labwork_4_2\bin\Debug\net5.0\labwork_4_2.dll
+C:\Users\vandr\Desktop\labwork_4\labwork_4_2\bin\Debug\net5.0\ref\labwork_4_2.dll
+C:\Users\vandr\Desktop\labwork_4\labwork_4_2\bin\Debug\net5.0\labwork_4_2.pdb
+C:\Users\vandr\Desktop\labwork_4\labwork_4_2\obj\Debug\net5.0\labwork_4_2.csprojAssemblyReference.cache
+C:\Users\vandr\Desktop\labwork_4\labwork_4_2\obj\Debug\net5.0\labwork_4_2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\vandr\Desktop\labwork_4\labwork_4_2\obj\Debug\net5.0\labwork_4_2.AssemblyInfoInputs.cache
+C:\Users\vandr\Desktop\labwork_4\labwork_4_2\obj\Debug\net5.0\labwork_4_2.AssemblyInfo.cs
+C:\Users\vandr\Desktop\labwork_4\labwork_4_2\obj\Debug\net5.0\labwork_4_2.csproj.CoreCompileInputs.cache
+C:\Users\vandr\Desktop\labwork_4\labwork_4_2\obj\Debug\net5.0\labwork_4_2.dll
+C:\Users\vandr\Desktop\labwork_4\labwork_4_2\obj\Debug\net5.0\ref\labwork_4_2.dll
+C:\Users\vandr\Desktop\labwork_4\labwork_4_2\obj\Debug\net5.0\labwork_4_2.pdb
+C:\Users\vandr\Desktop\labwork_4\labwork_4_2\obj\Debug\net5.0\labwork_4_2.genruntimeconfig.cache
