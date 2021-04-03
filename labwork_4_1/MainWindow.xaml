@@ -7,18 +7,20 @@
         xmlns:oxy="http://oxyplot.org/wpf"
         mc:Ignorable="d"
         Title="MainWindow" Height="550" Width="900" ResizeMode="NoResize">
-
+    <Window.DataContext>
+        <local:Graphics/>
+    </Window.DataContext>
     <Grid>
         <StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Left" >
-            <oxy:PlotView x:Name="SinField" Width="300" Height="500"/>
+            <oxy:PlotView Model="{Binding Sin}" Width="300" Height="500"/>
         </StackPanel>
 
         <StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Center" >
-            <oxy:PlotView x:Name="ParabolaField" Width="300" Height="500"/>
+            <oxy:PlotView Model="{Binding Parabola}" Width="300" Height="500"/>
         </StackPanel>
 
         <StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Right" >
-            <oxy:PlotView x:Name="LnField" Width="300" Height="500"/>
+            <oxy:PlotView Model="{Binding NaturalLogarithm}" Width="300" Height="500"/>
         </StackPanel>
     </Grid>
 </Window>
