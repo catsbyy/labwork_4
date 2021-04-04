@@ -1,0 +1,33 @@
+﻿<Window x:Class="labwork_4_5.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:labwork_4_5"
+        mc:Ignorable="d"
+        Title="Сортировка" Height="600" Width="800" ResizeMode="NoResize">
+    <Grid>
+        <WrapPanel>
+            <StackPanel Orientation="Horizontal">
+                <Button Margin="15 5 10 0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="100" Height="40" Content="Создать массив" Click="StartThreads"> </Button>
+                <TextBlock Margin="5" FontSize="16" VerticalAlignment="Center" >Созданный массив</TextBlock>
+                <TextBox x:Name="TextBoxArray" Margin="7" Width="500" FontSize="18"/>
+            </StackPanel>
+
+            <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
+                <Canvas Margin="15" x:Name="DrawingCanvas" Width="760" Height="400"/>
+            </StackPanel>
+            <StackPanel  Orientation="Horizontal" HorizontalAlignment="Right">
+                <TextBlock Margin="5" FontSize="16" VerticalAlignment="Center" >По возрастанию</TextBlock>
+                <TextBox x:Name="AscendingOutputTextBox" Margin="7" Width="535" FontSize="18"/>
+                <Button x:Name="RunAscSortingButton" Margin="5" FontSize="16" IsEnabled="False"  PreviewMouseLeftButtonDown="RunAscSorting">Сортировать</Button>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <TextBlock Margin="5" FontSize="16" VerticalAlignment="Center" >По убыванию</TextBlock>
+                <TextBox x:Name="DescendingOutputTextBox" Margin="7" Width="555" FontSize="18"/>
+                <Button x:Name="RunDescSortingButton" Margin="5" FontSize="16" IsEnabled="False"  PreviewMouseLeftButtonDown="RunDescSorting">Сортировать</Button>
+            </StackPanel>
+        </WrapPanel>
+    </Grid>
+</Window>
