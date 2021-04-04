@@ -10,12 +10,18 @@ namespace labwork_4_3
 {
     class FibonacciNumbers : Numbers
     {
+        int number;
+        public FibonacciNumbers(int n)
+        {
+            number = n;
+        }
         public override void ProcessNumbers()
         {
             Mutex mutex = new Mutex();
             mutex.WaitOne();
+
             string path = @"fibonacci.txt";
-            for (int i = 0; i < 40; i++)
+            for (int i = 0; i < number; i++)
             {
                 try
                 {
@@ -30,10 +36,11 @@ namespace labwork_4_3
                     Console.WriteLine(e.Message);
                 }
             }
+            Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine("Числа Фибоначчи записаны в файл");
-
             ReadFile(path);
             mutex.ReleaseMutex();
+            
         }
         static int FibonacciNumber(int number)
         {

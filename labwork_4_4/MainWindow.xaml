@@ -6,10 +6,13 @@
         xmlns:local="clr-namespace:labwork_4_4"
         xmlns:oxy="http://oxyplot.org/wpf"
         mc:Ignorable="d"
-        Title="MainWindow" Height="535" Width="800" ResizeMode="NoResize">
+        Title="График" Height="535" Width="800" ResizeMode="NoResize">
+    <Window.DataContext>
+        <local:Graphic/>
+    </Window.DataContext>
     <Grid>
         <StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Left" >
-            <oxy:PlotView x:Name="GraphicField" Width="790" Height="500"/>
+            <oxy:PlotView x:Name="GraphicField" Model="{Binding graphic}" Width="790" Height="500"/>
         </StackPanel>
     </Grid>
 </Window>

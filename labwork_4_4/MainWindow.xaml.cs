@@ -26,24 +26,8 @@ namespace labwork_4_4
         public MainWindow()
         {
             InitializeComponent();
-            new Thread(
-                delegate()
-                {
-                    Graphic.Series.Add(new FunctionSeries(CreateGraphic, -200, 200, 0.01, "23*x^2–33"));
-                }).Start();
 
-            DrawGraphic();
         }
 
-        PlotModel Graphic = new PlotModel();
-
-        public double CreateGraphic(double x)
-        {
-            return 23 * x * x - 33;
-        }
-        public void DrawGraphic()
-        {
-            GraphicField.Model = Graphic;
-        }
     }
 }

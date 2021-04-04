@@ -13,13 +13,26 @@ namespace labwork_4_3
         
         static void Main(string[] args)
         {
-            FibonacciNumbers fibonacci = new FibonacciNumbers();
-            Thread firstThread = new Thread(fibonacci.ProcessNumbers);
-            firstThread.Start();
+            Console.Write("Введите число, до которого осуществлять поиск: ");
+            int n = int.Parse(Console.ReadLine());
+            Console.WriteLine();
 
-            SimpleNumbers simple = new SimpleNumbers();
-            Thread secondThread = new Thread(simple.ProcessNumbers);
-            secondThread.Start();
+            Parallel.Invoke(
+                () =>
+                {
+                    FibonacciNumbers fibonacci = new FibonacciNumbers(n);
+                    Thread firstThread = new Thread(fibonacci.ProcessNumbers);
+                    firstThread.Start();
+                },
+
+                () =>
+                {
+                    SimpleNumbers simple = new SimpleNumbers(n);
+                    Thread secondThread = new Thread(simple.ProcessNumbers);
+                    secondThread.Start();
+                }
+                );
+
         }
 
     }

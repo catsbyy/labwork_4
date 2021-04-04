@@ -8,15 +8,21 @@ using System.IO;
 
 namespace labwork_4_3
 {
+
     class SimpleNumbers : Numbers
     {
+        int number;
+        public SimpleNumbers(int n)
+        {
+            number = n;
+        }
         public override void ProcessNumbers()
         {
             Mutex mutex = new Mutex();
             mutex.WaitOne();
 
             string path = @"simpleNumbers.txt";
-            for (int i = 0; i <= 100; i++)
+            for (int i = 2; i < number; i++)
             {
                 if (isSimple(i))
                 {
@@ -33,10 +39,11 @@ namespace labwork_4_3
                     }
                 }
             }
+            Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("Простые числа записаны в файл");
-
             ReadFile(path);
             mutex.ReleaseMutex();
+            
         }
         static bool isSimple(int n)
         {

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using System.Threading;
 
 namespace labwork_4_3
 {
@@ -11,9 +12,11 @@ namespace labwork_4_3
     {
         public void ReadFile(string path)
         {
+            Mutex mutex = new Mutex();
+            mutex.WaitOne();
             try
             {
-                using (StreamReader sr = new StreamReader(path, System.Text.Encoding.Default))
+                using (StreamReader sr = new StreamReader(path, Encoding.Default))
                 {
                     int counter = 0;
                     string line;
@@ -29,6 +32,8 @@ namespace labwork_4_3
             {
                 Console.WriteLine(e.Message);
             }
+            Console.ResetColor();
+            mutex.ReleaseMutex();
         }
         public virtual void ProcessNumbers() { }
     }
