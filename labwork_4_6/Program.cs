@@ -1,22 +1,27 @@
 ﻿using System;
-using System.Threading;
-using System.Threading.Tasks;
-
-//Бег с препятствиями. Создается условная карта трассы в виде матрицы, ширина которой соответствует количеству бегунов, а высота –фиксирована,
-//содержащей произвольное количество единиц (препятствий) в произвольных ячейках.
-//Стартующие бегуны (потоки) перемещаются по трассе и при встрече с препятствием задерживаются на фиксированное время.
-//По достижении финиша бегуны сообщают свой номер.
 
 namespace labwork_4_6
 {
     class Program
     {
+        public static int runners;
+        public static int[,] map;
         static void Main(string[] args)
         {
-            int runners;
+            EnterRunners();
+            CreateMap();
+
+            Console.WriteLine();
+
+            for (int i = 1; i <= runners; i++)
+            {
+                Runner runner = new Runner(i);
+            }
+        }
+        private static void EnterRunners()
+        {
             do
             {
-                
                 Console.Write("Введите количество бегунов: ");
                 runners = int.Parse(Console.ReadLine());
                 if (runners <= 0)
@@ -26,13 +31,17 @@ namespace labwork_4_6
                     Console.ResetColor();
                 }
             }
-            while (runners <=0);
-
+            while (runners <= 0);
+        }
+        private static void CreateMap()
+        {
             Random random = new Random();
-            int[,] map = new int[runners,runners];
-            for (int i=0;i<runners;i++)
+            map = new int[runners + 1, runners + 1];
+
+            Console.WriteLine("Трассы:");
+            for (int i = 1; i <= runners; i++)
             {
-                for (int j=0;j<runners;j++)
+                for (int j = 1; j <= runners; j++)
                 {
                     map[i, j] = random.Next(0, 2);
                     Console.Write(map[i, j] + "  ");
