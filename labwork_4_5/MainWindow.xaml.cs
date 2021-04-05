@@ -41,7 +41,7 @@ namespace labwork_4_5
             Random random = new Random();
             for (int i = 0; i<newArray.Length;i++)
             {
-                newArray[i] = random.Next(-20, 20);
+                newArray[i] = random.Next(-20, 21);
                 numbers[i] = newArray[i];
                 basicArray += newArray[i] + "  ";
             }
@@ -74,6 +74,7 @@ namespace labwork_4_5
 
         private void StartThreads(object sender, RoutedEventArgs e)
         {
+            MAX_HEIGHT = 400;
             AscendingOutputTextBox.Text = "";
             DescendingOutputTextBox.Text = "";
             CreateArray();
