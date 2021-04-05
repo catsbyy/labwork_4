@@ -17,6 +17,7 @@
             <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
                 <Canvas Margin="15" x:Name="DrawingCanvas" Width="760" Height="400"/>
             </StackPanel>
+
             <StackPanel  Orientation="Horizontal" HorizontalAlignment="Right">
                 <TextBlock Margin="5" FontSize="16" VerticalAlignment="Center" >По возрастанию</TextBlock>
                 <TextBox x:Name="AscendingOutputTextBox" Margin="7" Width="535" FontSize="18"/>

@@ -74,7 +74,6 @@ namespace labwork_4_5
 
         private void StartThreads(object sender, RoutedEventArgs e)
         {
-            MAX_HEIGHT = 400;
             AscendingOutputTextBox.Text = "";
             DescendingOutputTextBox.Text = "";
             CreateArray();
