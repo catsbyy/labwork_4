@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "labwork_4_6/1.0.0": {
+        "runtime": {
+          "labwork_4_6.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "labwork_4_6/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
