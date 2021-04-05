@@ -18,3 +18,4 @@ C:\Users\vandr\Desktop\labwork_4\labwork_4_4\obj\Debug\labwork_4_4.csproj.CopyCo
 C:\Users\vandr\Desktop\labwork_4\labwork_4_4\obj\Debug\labwork_4_4.exe
 C:\Users\vandr\Desktop\labwork_4\labwork_4_4\obj\Debug\labwork_4_4.pdb
 C:\Users\vandr\Desktop\labwork_4\labwork_4_4\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\vandr\Desktop\labwork_4\labwork_4_4\obj\Debug\labwork_4_4.csprojAssemblyReference.cache

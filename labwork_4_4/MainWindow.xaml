@@ -12,7 +12,12 @@
     </Window.DataContext>
     <Grid>
         <StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Left" >
-            <oxy:PlotView x:Name="GraphicField" Model="{Binding graphic}" Width="790" Height="500"/>
+            <oxy:Plot Title="{Binding Title}" Width="790" Height="500">
+                <oxy:Plot.Series>
+                    <oxy:LineSeries ItemsSource="{Binding Points}"/>
+                </oxy:Plot.Series>
+                
+            </oxy:Plot>
         </StackPanel>
     </Grid>
 </Window>
