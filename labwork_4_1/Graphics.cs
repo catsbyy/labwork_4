@@ -33,6 +33,7 @@ namespace labwork_4_1
                 {
                     NaturalLogarithm = new PlotModel { Title = "Natural logarithm" };
                     NaturalLogarithm.Series.Add(new FunctionSeries(CreateLn, 0, 50, 0.1, "ln(x^2)/x^3"));
+                    NaturalLogarithm.Series.Add(new FunctionSeries(CreateLn, -50, -0.1, 0.1, "ln(x^2)/x^3"));
                 }
                 );
         }
@@ -42,7 +43,7 @@ namespace labwork_4_1
         }
         public double CreateLn(double x)
         {
-            return Math.Log(Math.Pow(x, 2) / Math.Pow(x, 3));
+            return Math.Log(Math.Pow(x, 2))/ Math.Pow(x, 3);
         }
 
     }
