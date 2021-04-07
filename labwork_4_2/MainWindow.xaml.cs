@@ -23,7 +23,7 @@ namespace labwork_4_2
     /// </summary>
     public partial class MainWindow : Window
     {
-        Calculation calculation = new Calculation();
+        
         public MainWindow()
         {
             InitializeComponent();
@@ -33,9 +33,8 @@ namespace labwork_4_2
         {
             try
             {
-                
-                calculation.x = Convert.ToDouble(TextBoxValueX.Text);
-                calculation.StartCalculation();
+                (DataContext as Calculation).x = Convert.ToDouble(TextBoxValueX.Text);
+                (DataContext as Calculation).StartCalculation();
             }
             catch
             {
@@ -45,12 +44,12 @@ namespace labwork_4_2
 
         private void Button_Reset(object sender, RoutedEventArgs e)
         {
-            calculation.ResetValues();
+            (DataContext as Calculation).ResetValues();
         }
 
         private void Button_Stop(object sender, RoutedEventArgs e)
         {
-            calculation.StopCalculation();
+            (DataContext as Calculation).StopCalculation();
         }
     }
     class Calculation : INotifyPropertyChanged
@@ -59,7 +58,7 @@ namespace labwork_4_2
 
         static ulong j = 1;
         static int p = 0;
-        public static double w;
+        public double w;
         public double x { get; set; }
         private bool IsRunning = true;
         Thread thread;
@@ -74,7 +73,7 @@ namespace labwork_4_2
             set
             {
                 w = value;
-                OnPropertyChanged("w");
+                OnPropertyChanged("W");
             }
         }
 
@@ -88,15 +87,15 @@ namespace labwork_4_2
         public void Calculate()
         {      
             mutex.WaitOne();
-            w = 1;
+            W = 1;
             
             while(true)
             {
                 p++;
-                w += j * Math.Pow(Math.Sin(x), p);
+                W += j * Math.Pow(Math.Sin(x), p);
                 j *= 2;
 
-                w -= j * Math.Pow(Math.Cos(x), p);
+                W -= j * Math.Pow(Math.Cos(x), p);
 
                 j *= 2;
                 Thread.Sleep(1000);
@@ -105,8 +104,6 @@ namespace labwork_4_2
                     break;
             }
             mutex.ReleaseMutex();
-  
-            //thread.Start();
         }
         public event PropertyChangedEventHandler PropertyChanged;
 

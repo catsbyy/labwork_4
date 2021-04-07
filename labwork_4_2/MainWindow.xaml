@@ -22,7 +22,7 @@
                 <TextBlock Text="W = 1 + sin(x) – 2*cos(x) + 4*sin2(x) – 8*cos2(x) + ... - ..." FontSize="26" FontWeight="Bold"/>
                 <TextBox x:Name="TextBoxValueX" materialDesign:HintAssist.Hint="Введите значение переменной Х" FontSize="20" Margin="0 15 0 15" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
                 <Button Content="Начать вычисление" FontSize="20" Click="Button_Start"/>
-                <TextBox x:Name="TextBoxValueW" Text="{Binding W}" Margin="0 15 0 15"  materialDesign:HintAssist.Hint="Значение W" FontSize="20" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+                <TextBox x:Name="TextBoxValueW" Text="{Binding W, UpdateSourceTrigger=PropertyChanged}" Margin="0 15 0 15"  materialDesign:HintAssist.Hint="Значение W" FontSize="20" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
                 
                 <WrapPanel HorizontalAlignment="Right">
                     <Button Content="Остановить вычисление" FontSize="20" Click="Button_Stop" Margin="0 0 15 0"/>
