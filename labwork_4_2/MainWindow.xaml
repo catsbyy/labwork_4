@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:labwork_4_2"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Формула" Height="450" Width="800" ResizeMode="NoResize">
 
     <Window.DataContext>
         <local:Calculation/>

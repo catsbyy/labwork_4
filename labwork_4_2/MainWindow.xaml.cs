@@ -82,10 +82,10 @@ namespace labwork_4_2
             StopCalculation();
             j = 1;
             p = 0;
-            w = 1;
+            W = 0;
         }
         public void Calculate()
-        {      
+        {
             mutex.WaitOne();
             W = 1;
             
