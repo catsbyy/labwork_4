@@ -42,9 +42,9 @@ namespace labwork_4_2
             }
         }
 
-        private void Button_Reset(object sender, RoutedEventArgs e)
+        private void Button_Exit(object sender, RoutedEventArgs e)
         {
-            (DataContext as Calculation).ResetValues();
+            Application.Current.Shutdown();
         }
 
         private void Button_Stop(object sender, RoutedEventArgs e)
@@ -77,13 +77,6 @@ namespace labwork_4_2
             }
         }
 
-        public void ResetValues()
-        {
-            StopCalculation();
-            j = 1;
-            p = 0;
-            W = 0;
-        }
         public void Calculate()
         {
             mutex.WaitOne();
