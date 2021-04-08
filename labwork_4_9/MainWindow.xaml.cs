@@ -47,20 +47,28 @@ namespace labwork_4_9
         }
         private void Button_SearchNOD(object sender, RoutedEventArgs e)
         {
-            if (Convert.ToInt32(TextBoxValueX.Text) > 0 && Convert.ToInt32(TextBoxValueY.Text) > 0)
+            try
             {
-                x = Convert.ToInt32(TextBoxValueX.Text);
-                y = Convert.ToInt32(TextBoxValueY.Text);
 
-                Thread thread = new Thread(EuclidianAlgorithm);
-                thread.Start();
-                thread.Join();
+                if (Convert.ToInt32(TextBoxValueX.Text) > 0 && Convert.ToInt32(TextBoxValueY.Text) > 0)
+                {
+                    x = Convert.ToInt32(TextBoxValueX.Text);
+                    y = Convert.ToInt32(TextBoxValueY.Text);
 
-                TextBoxResult.Text = nod.ToString();
+                    Thread thread = new Thread(EuclidianAlgorithm);
+                    thread.Start();
+                    thread.Join();
+
+                    TextBoxResult.Text = nod.ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Чтобы использовать алгоритм Евклида, числа должны быть неотрицательными и не равняться 0");
+                }
             }
-            else
+            catch
             {
-                MessageBox.Show("Чтобы использовать алгоритм Евклида, числа должны быть неотрицательными и не равняться 0");
+                MessageBox.Show("Проверьте корректность данных");
             }
         }
     }
