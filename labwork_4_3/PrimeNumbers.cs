@@ -8,11 +8,10 @@ using System.IO;
 
 namespace labwork_4_3
 {
-
-    class SimpleNumbers : Numbers
+    class PrimeNumbers : Numbers
     {
         int number;
-        public SimpleNumbers(int n)
+        public PrimeNumbers(int n)
         {
             number = n;
         }
@@ -21,10 +20,10 @@ namespace labwork_4_3
             Mutex mutex = new Mutex();
             mutex.WaitOne();
 
-            string path = @"simpleNumbers.txt";
+            string path = @"primeNumbers.txt";
             for (int i = 2; i < number; i++)
             {
-                if (isSimple(i))
+                if (IsPrime(i))
                 {
                     try
                     {
@@ -45,13 +44,18 @@ namespace labwork_4_3
             mutex.ReleaseMutex();
             
         }
-        static bool isSimple(int n)
+        bool IsPrime(int number)
         {
-            for (int i = 2; i < (int)(n / 2); i++)
-            {
-                if (n % i == 0)
+            if (number <= 1) return false;
+            if (number == 2) return true;
+            if (number % 2 == 0) return false;
+
+            var boundary = (int)Math.Floor(Math.Sqrt(number));
+
+            for (int i = 3; i <= boundary; i += 2)
+                if (number % i == 0)
                     return false;
-            }
+
             return true;
         }
     }

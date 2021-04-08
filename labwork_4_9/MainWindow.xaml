@@ -1,0 +1,28 @@
+﻿<Window x:Class="labwork_4_9.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:labwork_4_9"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="Классический алгоритм Евклида" Height="450" Width="800">
+
+    <Grid Background="#ffdadada">
+        <Border MinWidth="500" Margin="15" Background="#fff" VerticalAlignment="Center" Padding="30" MaxWidth="800" MinHeight="350" CornerRadius="20">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="30" Color="LightGray" ShadowDepth="0"/>
+            </Border.Effect>
+
+            <StackPanel>
+                <WrapPanel>
+                    <TextBox x:Name ="TextBoxValueX" materialDesign:HintAssist.Hint="Введите значение X" FontSize="20" Margin="0 15 5 15" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="340" HorizontalAlignment="Left"/>
+                    <TextBox x:Name ="TextBoxValueY" materialDesign:HintAssist.Hint="Введите значение Y" FontSize="20" Margin="5 15 0 15" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="340" HorizontalAlignment="Right"/>
+                </WrapPanel>
+
+                <Button Content="Начать поиск НОД" FontSize="20" Margin="15" Click="Button_SearchNOD"/>
+                <TextBox x:Name ="TextBoxResult" Text="{Binding nod}" materialDesign:HintAssist.Hint="Наибольший общий делитель" FontSize="20" Margin="0 15 5 15" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>

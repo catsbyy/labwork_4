@@ -27,7 +27,7 @@ namespace labwork_4_3
 
                 () =>
                 {
-                    SimpleNumbers simple = new SimpleNumbers(n);
+                    PrimeNumbers simple = new PrimeNumbers(n);
                     Thread secondThread = new Thread(simple.ProcessNumbers);
                     secondThread.Start();
                 }
