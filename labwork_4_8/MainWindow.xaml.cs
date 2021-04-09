@@ -32,14 +32,21 @@ namespace labwork_4_8
             {
                 if (Convert.ToInt32(TextBoxMinValue.Text) >=0 && Convert.ToInt32(TextBoxMaxValue.Text) >=0)
                 {
-                    (DataContext as PrimeSearcher).min = Convert.ToInt32(TextBoxMinValue.Text);
-                    (DataContext as PrimeSearcher).max = Convert.ToInt32(TextBoxMaxValue.Text);
+                    if (Convert.ToInt32(TextBoxMinValue.Text)<= Convert.ToInt32(TextBoxMaxValue.Text))
+                    {
+                        (DataContext as PrimeSearcher).min = Convert.ToInt32(TextBoxMinValue.Text);
+                        (DataContext as PrimeSearcher).max = Convert.ToInt32(TextBoxMaxValue.Text);
 
-                    (DataContext as PrimeSearcher).StartSearching();
+                        (DataContext as PrimeSearcher).StartSearching();
 
-                    (DataContext as PrimeSearcher).JoinThreads();
+                        (DataContext as PrimeSearcher).JoinThreads();
 
-                    TextBoxResult.Text = (DataContext as PrimeSearcher).result;
+                        TextBoxResult.Text = (DataContext as PrimeSearcher).result;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Начальное число не может быть больше последнего");
+                    }
 
                 }
                 else
@@ -52,6 +59,12 @@ namespace labwork_4_8
                 MessageBox.Show("Проверьте корректность данных");
             }
             
+        }
+
+        private void Button_NewValues(object sender, RoutedEventArgs e)
+        {
+            System.Diagnostics.Process.Start(Application.ResourceAssembly.Location);
+            Application.Current.Shutdown();
         }
     }
 }

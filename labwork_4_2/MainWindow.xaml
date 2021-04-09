@@ -26,7 +26,7 @@
                 
                 <WrapPanel HorizontalAlignment="Right">
                     <Button Content="Остановить вычисление" FontSize="20" Click="Button_Stop" Margin="0 0 15 0"/>
-                    <Button Content="Закрыть приложение" FontSize="20" Click="Button_Exit" />
+                    <Button Content="Ввести новые значения" FontSize="20" Click="Button_NewValues" />
                 </WrapPanel>
 
             </StackPanel>

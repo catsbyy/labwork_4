@@ -42,8 +42,9 @@ namespace labwork_4_2
             }
         }
 
-        private void Button_Exit(object sender, RoutedEventArgs e)
+        private void Button_NewValues(object sender, RoutedEventArgs e)
         {
+            System.Diagnostics.Process.Start(Application.ResourceAssembly.Location);
             Application.Current.Shutdown();
         }
 

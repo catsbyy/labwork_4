@@ -21,24 +21,31 @@ namespace labwork_4_8
 
         public PrimeSearcher()
         {
-            if ((min+max)%2==0)
+            if (min == max)
+            {
+                thread1 = new Thread(
+                    () =>
+                    {
+                        SearchPrime(min, max);
+                    });
+                thread2 = new Thread(
+                    ()=> { });
+            }
+            else if ((min + max) % 2 == 0)
             {
                 average = (min + max) / 2;
+
+                thread1 = new Thread(
+                    () =>
+                    {
+                        SearchPrime(min, average);
+                    });
+                thread2 = new Thread(
+                    () =>
+                    {
+                        SearchPrime(average, max);
+                    });
             }
-            else
-            {
-                average = (min + max + 1) / 2;
-            }
-            thread1 = new Thread(
-                ()=>
-                {
-                    SearchPrime(min, average);
-                });
-            thread2 = new Thread(
-                ()=>
-                {
-                    SearchPrime(average, max);
-                });
         }
         public void StartSearching()
         {

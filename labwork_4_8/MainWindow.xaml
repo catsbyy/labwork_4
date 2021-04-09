@@ -30,6 +30,8 @@
                         <TextBox x:Name="TextBoxResult" materialDesign:HintAssist.Hint="Простые числа в указанном диапазоне" FontSize="20" Margin="5 15 0 15" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
                     </StackPanel>
                 </ScrollViewer>
+
+                <Button Content="Ввести новые значения" FontSize="20" Margin="15" Click="Button_NewValues"/>
             </StackPanel>
         </Border>
     </Grid>
