@@ -6,14 +6,14 @@
         xmlns:local="clr-namespace:labwork_4_8"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="Поиск простых чисел" Height="450" Width="800" ResizeMode="NoResize">
+        Title="Поиск простых чисел" Height="600" Width="800" ResizeMode="NoResize">
     
     <Window.DataContext>
         <local:PrimeSearcher/>
     </Window.DataContext>
     
     <Grid Background="#ffdadada">
-        <Border MinWidth="500" Margin="15" Background="#fff" VerticalAlignment="Center" Padding="30" MaxWidth="800" MinHeight="350" CornerRadius="20">
+        <Border MinWidth="500" Margin="15" Background="#fff" VerticalAlignment="Center" Padding="30" MaxWidth="800" MinHeight="500" CornerRadius="20">
             <Border.Effect>
                 <DropShadowEffect BlurRadius="30" Color="LightGray" ShadowDepth="0"/>
             </Border.Effect>
@@ -24,14 +24,13 @@
                 </WrapPanel>
 
                 <Button Content="Начать поиск" FontSize="20" Margin="15" Click="Button_SearchPrimeNumbers"/>
+                <Button Content="Ввести новые значения" FontSize="20" Margin="15 0 15 0" Click="Button_NewValues"/>
 
                 <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
                     <StackPanel>
-                        <TextBox x:Name="TextBoxResult" materialDesign:HintAssist.Hint="Простые числа в указанном диапазоне" FontSize="20" Margin="5 15 0 15" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+                        <TextBox x:Name="TextBoxResult" materialDesign:HintAssist.Hint="Простые числа в указанном диапазоне" FontSize="20" MaxHeight="245" Margin="0 10 0 0" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
                     </StackPanel>
                 </ScrollViewer>
-
-                <Button Content="Ввести новые значения" FontSize="20" Margin="15" Click="Button_NewValues"/>
             </StackPanel>
         </Border>
     </Grid>
