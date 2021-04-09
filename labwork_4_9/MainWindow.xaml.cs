@@ -28,8 +28,9 @@ namespace labwork_4_9
 
         public int x { get; set; }
         public int y { get; set; }
+        public int average;
         public int nod { get; set; }
-        static object locker = new object();
+        
         public void EuclidianAlgorithm()
         {
             while (x != y)
@@ -49,7 +50,6 @@ namespace labwork_4_9
         {
             try
             {
-
                 if (Convert.ToInt32(TextBoxValueX.Text) > 0 && Convert.ToInt32(TextBoxValueY.Text) > 0)
                 {
                     x = Convert.ToInt32(TextBoxValueX.Text);

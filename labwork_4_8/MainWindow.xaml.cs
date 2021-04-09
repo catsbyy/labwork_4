@@ -34,11 +34,13 @@ namespace labwork_4_8
                 {
                     (DataContext as PrimeSearcher).min = Convert.ToInt32(TextBoxMinValue.Text);
                     (DataContext as PrimeSearcher).max = Convert.ToInt32(TextBoxMaxValue.Text);
+
                     (DataContext as PrimeSearcher).StartSearching();
 
-                    (DataContext as PrimeSearcher).thread.Join();
+                    (DataContext as PrimeSearcher).JoinThreads();
 
                     TextBoxResult.Text = (DataContext as PrimeSearcher).result;
+
                 }
                 else
                 {

@@ -4,42 +4,54 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
-using System.ComponentModel;
-using System.Runtime.CompilerServices;
 
 namespace labwork_4_8
 {
-    class PrimeSearcher : INotifyPropertyChanged
+    class PrimeSearcher
     {
         public int min;
         public int max;
+        int average;
+
         public string result { get; set; }
-        public Thread thread;
+        public string result1 { get; set; }
+        public string result2 { get; set; }
+        public Thread thread1;
+        public Thread thread2;
 
         public PrimeSearcher()
         {
-            thread = new Thread(SearchPrime);
+            if ((min+max)%2==0)
+            {
+                average = (min + max) / 2;
+            }
+            else
+            {
+                average = (min + max + 1) / 2;
+            }
+            thread1 = new Thread(
+                ()=>
+                {
+                    SearchPrime(min, average);
+                });
+            thread2 = new Thread(
+                ()=>
+                {
+                    SearchPrime(average, max);
+                });
         }
         public void StartSearching()
         {
-            thread.Start();
+            thread1.Start();
+            thread2.Start();
         }
-        public string Result
-        {
-            get { return result; }
-            set
-            {
-                result = value;
-                OnPropertyChanged("Result");
-            }
-        }
-        public void SearchPrime()
+       
+        public void SearchPrime(int firstvalue, int secondvalue)
         {
             Mutex mutex = new Mutex();
             mutex.WaitOne();
-            result = "";
 
-            for (int i = min; i <= max; i++)
+            for (int i = firstvalue; i <= secondvalue; i++)
             {
                 if (IsPrime(i))
                 {
@@ -50,7 +62,6 @@ namespace labwork_4_8
                     continue;
                 }    
             }
-            
             mutex.ReleaseMutex();
         }
         public bool IsPrime(int number)
@@ -68,11 +79,12 @@ namespace labwork_4_8
             return true;
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        public void JoinThreads()
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            result = result1 + result2;
+            thread1.Join();
+            thread2.Join(); 
         }
+      
     }
 }

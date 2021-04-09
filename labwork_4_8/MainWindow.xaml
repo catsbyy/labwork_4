@@ -27,10 +27,9 @@
 
                 <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
                     <StackPanel>
-                        <TextBox x:Name="TextBoxResult" Text="{Binding Result}" materialDesign:HintAssist.Hint="Простые числа в указанном диапазоне" FontSize="20" Margin="5 15 0 15" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+                        <TextBox x:Name="TextBoxResult" materialDesign:HintAssist.Hint="Простые числа в указанном диапазоне" FontSize="20" Margin="5 15 0 15" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
                     </StackPanel>
                 </ScrollViewer>
-
             </StackPanel>
         </Border>
     </Grid>
